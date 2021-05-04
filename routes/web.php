@@ -17,7 +17,7 @@ use App\Http\Controllers\ClientesController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('Clientes.index');
 });
 
 /*Route::get('/clientes',function () {
@@ -27,9 +27,9 @@ Route::get('/clientes/create', function () {
     return view('Clientes.create');
 });*/
 
-Route::resource('clientes', ClientesController::class)->middleware('auth');
+Route::resource('clientes', ClientesController::class);
 
-Auth::routes(['register'=>false,'reset'=>false]);
+Auth::routes(['reset'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

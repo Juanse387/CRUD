@@ -14,7 +14,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return Clientes::all();
+        $Cliente= Clientes::all();
+        return $Cliente;
     }
 
     /**
